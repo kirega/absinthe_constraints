@@ -52,6 +52,7 @@ defmodule AbsintheConstraints.Directive do
   defp get_args(:string), do: @string_args
   defp get_args(:integer), do: @number_args
   defp get_args(:float), do: @number_args
+  defp get_args(:id), do: @string_args
   defp get_args(%List{}), do: @list_args
   defp get_args(%NonNull{of_type: of_type}), do: get_args(of_type)
   defp get_args(type), do: raise("Unsupported type: #{inspect(type)}")
